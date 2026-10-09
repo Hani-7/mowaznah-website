@@ -327,6 +327,28 @@ h2 .grad { display: inline-block; }
   .hero-visual .device { transform: none; }
 }
 
+/* زر تبديل اللغة */
+.lang-switch {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 46px; height: 40px; padding: 0 12px;
+  border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--text) !important; font-weight: 800;
+}
+.lang-switch:hover { border-color: var(--teal); background: var(--surface-2) !important; }
+
+/* ───────── الصفحة الإنجليزية (من اليسار لليمين) ───────── */
+[dir='ltr'] body, body[dir='ltr'] { letter-spacing: 0; }
+[dir='ltr'] .hero h1 { font-size: clamp(2.3rem, 4.3vw, 3.7rem); letter-spacing: -1px; line-height: 1.12; }
+[dir='ltr'] .hero-visual .device { transform: rotateY(9deg) rotateX(4deg); transform-origin: right center; }
+[dir='ltr'] .hero-visual:hover .device { transform: rotateY(4deg) rotateX(2deg); }
+[dir='ltr'] .receipt { right: auto; left: -18px; transform: rotate(-5deg); }
+[dir='ltr'] .f1 { left: auto; right: 8%; }
+[dir='ltr'] .f2 { left: auto; right: -26px; }
+[dir='ltr'] .steps li::before { left: auto; right: 20px; }
+[dir='ltr'] .flow li:not(:last-child)::after { right: auto; left: 44px; }
+[dir='ltr'] .direct a:hover { transform: translateX(4px); }
+[dir='ltr'] .wa-float { left: auto; right: 22px; }
+[dir='ltr'] .foot-col a[dir='ltr'] { text-align: left; }
+[dir='ltr'] .device-bar span { direction: ltr; }
+
 /* ───────── الشاشات الأصغر ───────── */
 @media (max-width: 1080px) {
   .hero-in, .tour-panel, .einv, .contact, .offer { grid-template-columns: 1fr; }
@@ -366,4 +388,8 @@ h2 .grad { display: inline-block; }
   .receipt { right: -6px; width: 30%; }
   .hero-visual .device { transform: none; }
   .wa-float { width: 54px; height: 54px; bottom: 16px; left: 16px; }
+  [dir='ltr'] .wa-float { left: auto; right: 16px; }
+  [dir='ltr'] .f2 { right: -6px; }
+  [dir='ltr'] .f1 { right: 4%; }
+  [dir='ltr'] .receipt { left: -6px; }
 }
