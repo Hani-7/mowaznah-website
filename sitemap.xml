@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mowaznah.com/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mowaznah.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mowaznah.com/en/"/>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mowaznah.com/en/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mowaznah.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mowaznah.com/en/"/>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mowaznah.com/restaurant-accounting-software/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mowaznah.com/e-invoicing-restaurants/</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

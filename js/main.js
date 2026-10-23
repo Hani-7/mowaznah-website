@@ -31,8 +31,10 @@
   onScroll();
 
   // قائمة الجوال
+  // صفحات الأدلة لا تحوي الجولة ولا النموذج، فكل جزء يعمل فقط إن وُجدت عناصره
   const menuBtn = $('#menuBtn');
   const links = $('#links');
+  if (menuBtn && links) {
   const setMenu = (open) => {
     links.classList.toggle('open', open);
     menuBtn.setAttribute('aria-expanded', String(open));
@@ -41,6 +43,7 @@
   menuBtn.addEventListener('click', () => setMenu(!links.classList.contains('open')));
   $$('a', links).forEach((a) => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (e) => e.key === 'Escape' && setMenu(false));
+  }
 
   // الظهور عند التمرير + عدّاد الأرقام
   const counted = new WeakSet();
@@ -74,6 +77,7 @@
   // جولة الشاشات (تبويبات بلوحة مفاتيح كاملة)
   const tabs = $$('.tabs [role="tab"]');
   const img = $('#tourImg');
+  if (img) {
   const title = $('#tourTitle');
   const text = $('#tourText');
   // مجلد الصور نفسه الذي تستخدمه الصورة الحالية، فيعمل من الصفحة العربية ومن /en/
@@ -110,11 +114,12 @@
   });
   // تحميل مسبق لصور الجولة بعد تحميل الصفحة
   window.addEventListener('load', () => tabs.forEach((t) => { new Image().src = `${imgBase}${t.dataset.img}.webp`; }));
+  }
 
   // نموذج الطلب: يفتح واتساب برسالة جاهزة
   const form = $('#leadForm');
   const error = $('#formError');
-  form.addEventListener('submit', (e) => {
+  if (form) form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
     const phone = String(data.phone || '').replace(/[\s-]/g, '');
@@ -144,5 +149,6 @@
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
   });
 
-  $('#year').textContent = new Date().getFullYear();
+  const year = $('#year');
+  if (year) year.textContent = new Date().getFullYear();
 })();
